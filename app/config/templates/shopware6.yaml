@@ -1,0 +1,230 @@
+---
+tables:
+    b2b_debtor_contact:
+        converters:
+            firstname:
+                converter: 'faker'
+                parameters:
+                    formatter: 'firstName'
+            lastname:
+                converter: 'faker'
+                parameters:
+                    formatter: 'lastName'
+            #salutation_id: should be randomized, due to foreign key not that easy
+            department:
+                converter: 'faker'
+                parameters:
+                    formatter: 'jobTitle'
+            email:
+                converter: 'randomizeEmail'
+                unique: true
+            real_email:
+                converter: 'randomizeText'
+                unique: true
+    customer:
+        converters:
+            first_name:
+                converter: 'faker'
+                parameters:
+                    formatter: 'firstName'
+            last_name:
+                converter: 'faker'
+                parameters:
+                    formatter: 'lastName'
+            #salutation_id: should be randomized, due to foreign key not that easy
+            company:
+                converter: 'faker'
+                parameters:
+                    formatter: 'company'
+            password:
+                converter: 'setValue'
+                parameters:
+                    value: 'randomized'
+            legacy_password:
+                converter: 'setValue'
+                parameters:
+                    value: 'randomized'
+            email:
+                converter: 'randomizeEmail'
+                unique: true
+            title:
+                converter: 'randomizeText'
+            birthday:
+                converter: 'randomDate'
+            remote_address:
+                converter: 'setValue'
+                parameters:
+                    value: '127.0.0.1'
+    customer_address:
+        converters:
+            company:
+                converter: 'faker'
+                parameters:
+                    formatter: 'company'
+            department:
+                converter: 'faker'
+                parameters:
+                    formatter: 'jobTitle'
+            title:
+                converter: 'randomizeText'
+            first_name:
+                converter: 'faker'
+                parameters:
+                    formatter: 'firstName'
+            last_name:
+                converter: 'faker'
+                parameters:
+                    formatter: 'lastName'
+            street:
+                converter: 'faker'
+                parameters:
+                    formatter: 'streetAddress'
+            zipcode:
+                converter: 'faker'
+                parameters:
+                    formatter: 'postcode'
+            city:
+                converter: 'faker'
+                parameters:
+                    formatter: 'city'
+            vat_id:
+                converter: 'randomizeNumber'
+            phone_number:
+                converter: 'faker'
+                parameters:
+                    formatter: 'phoneNumber'
+            additional_address_line1:
+                converter: 'randomizeText'
+            additional_address_line2:
+                converter: 'randomizeText'
+
+    cart:
+        truncate: true
+    customer_recovery:
+        truncate: true
+    dead_recovery:
+        truncate: true
+    enqueue:
+        truncate: true
+    google_shopping_account:
+        truncate: true
+    google_shopping_merchant_account:
+        truncate: true
+    #Maybe add import_export_log.username here?
+    integration:
+        truncate: true
+    log_entry:
+        truncate: true
+    message_queue_stats:
+        truncate: true
+    newsletter_recipient:
+        converters:
+            email:
+                converter: 'randomizeEmail'
+            title:
+                converter: 'randomizeText'
+            first_name:
+                converter: 'faker'
+                parameters:
+                    formatter: 'firstName'
+            last_name:
+                converter: 'faker'
+                parameters:
+                    formatter: 'lastName'
+            zip_code:
+                converter: 'faker'
+                parameters:
+                    formatter: 'postcode'
+            city:
+                converter: 'faker'
+                parameters:
+                    formatter: 'city'
+            street:
+                converter: 'faker'
+                parameters:
+                    formatter: 'streetAddress'
+            #salutation_id: should be randomized too, due to foreign key not that easy
+    order_address:
+        converters:
+            company:
+                converter: 'faker'
+                parameters:
+                    formatter: 'company'
+            department:
+                converter: 'faker'
+                parameters:
+                    formatter: 'jobTitle'
+            #salutation_id: should be randomized too, due to foreign key not that easy
+            title:
+                converter: 'randomizeText'
+            first_name:
+                converter: 'faker'
+                parameters:
+                    formatter: 'firstName'
+            last_name:
+                converter: 'faker'
+                parameters:
+                    formatter: 'lastName'
+            street:
+                converter: 'faker'
+                parameters:
+                    formatter: 'streetAddress'
+            zipcode:
+                converter: 'faker'
+                parameters:
+                    formatter: 'postcode'
+            city:
+                converter: 'faker'
+                parameters:
+                    formatter: 'city'
+            vat_id:
+                converter: 'randomizeNumber'
+            phone_number:
+                converter: 'faker'
+                parameters:
+                    formatter: 'phoneNumber'
+            additional_address_line1:
+                converter: 'randomizeText'
+            additional_address_line2:
+                converter: 'randomizeText'
+    order_customer:
+        converters:
+            email:
+                converter: 'randomizeEmail'
+            #salutation_id: should be randomized, due to foreign key not that easy
+            first_name:
+                converter: 'faker'
+                parameters:
+                    formatter: 'firstName'
+            last_name:
+                converter: 'faker'
+                parameters:
+                    formatter: 'lastName'
+            title:
+                converter: 'randomizeText'
+            company:
+                converter: 'faker'
+                parameters:
+                    formatter: 'company'
+            remote_address:
+                converter: 'setValue'
+                parameters:
+                    value: '127.0.0.1'
+    product_review:
+        converters:
+            external_user:
+                converter: 'randomizeText'
+            external_email:
+                converter: 'randomizeEmail'
+    refresh_token:
+        truncate: true
+    scheduled_task:
+        truncate: true
+    user_recovery:
+        truncate: true
+    version:
+        truncate: true
+    version_commit:
+        truncate: true
+    version_commit_data:
+        truncate: true
